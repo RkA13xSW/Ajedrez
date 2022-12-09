@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./ASSETS/iconos/favicon.png" type="image/png">
+    <link rel="stylesheet" href="./CSS/main.css">
+    <title>Ajedrez</title>
+</head>
+<body>
+    <section class="inicio">
+        <h1>Bienvenido al reto de Ajedrez:</h1>
+        <div class="normas">
+            <h4>Reglas:</h4>
+            <p>
+                Los jugadores tendrán unas oportunidades para realizar unas <strong>jugadas</strong> previamente mostradas.
+                <br>
+                Al superar una jugada, se ganará <i>ciertos intentos</i> para la siguiente.
+                <br>
+                Si llega al máximo de errores <strong>Game Over</strong>.
+                <br>
+                Las <strong>dificultades</strong> reducen el <i>las oportunidades</i> y los <i>intentos ganados</i> al superar pruebas.
+                <br>
+                La <strong>victoria</strong> se obtendrá al <i>superar 5 jugadas</i>.
+                <br>
+                Suerte!
+            </p>
+        </div>
+        <div class="selector">
+            <div class="campo">
+                <label for="dificultad">Dificultad</label>
+                <select name="dificultad" id="dificultad" onchange="cambiarDificultad(this.value)">
+                    <option value="0" selected>Fácil</option>
+                    <option value="1">Normal</option>
+                    <option value="2">Difícil</option>
+                </select>
+            </div>
+            <div class="campo">
+                <button onclick="iniciarPartida()">Jugar</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="partida noVer">
+        <div class="bloqueo"></div>
+        <div class="tabla">
+            <div class="lateral">
+                <div class="indice-lateral">
+                    <span>8</span>
+                    <span>7</span>
+                    <span>6</span>
+                    <span>5</span>
+                    <span>4</span>
+                    <span>3</span>
+                    <span>2</span>
+                    <span>1</span>
+                </div>
+                <div class="tablero">
+
+                </div>
+            </div>
+            <div class="indice-inferior">
+                <div></div>
+                <span>a</span>
+                <span>b</span>
+                <span>c</span>
+                <span>d</span>
+                <span>e</span>
+                <span>f</span>
+                <span>g</span>
+                <span>h</span>
+            </div>
+            <div class="info-partida">
+                <p>Intentos: <span id="intentosRestantes">10</span></p>
+                <p>Aciertos: <span id="aciertos">0</span></p>
+                <p>Errores: <span id="errores">0</span></p>
+            </div>
+        </div>
+        <div class="historico">
+            <h4>Histórico</h4>
+            <div class="contenido-historico">
+            </div>
+        </div>
+        
+    </section>
+    <div class="ventana noVer">
+        <div class="ventana-final">
+            <div class="mensaje-final">
+                <h4 id="mensajeTitulo">Enhorabuena!</h4>
+                <p id="mensajeTxt">Has superado con exito el reto...</p>
+                <p><strong>Intentos restantes: </strong> <span id="intentosFinales">0</span></p>
+                <p><strong>Errores: </strong> <span id="erroresFinales">0</span></p>
+
+                <div class="campo">
+                    <button onclick="iniciarPartida()">Volver a jugar</button>
+                    <button onclick="volver()">Volver al inicio</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./JS/main.js"></script>
+</body>
+</html>
