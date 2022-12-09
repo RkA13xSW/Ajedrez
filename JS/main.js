@@ -480,6 +480,7 @@ function aumentarAciertos(){
         victoria();
     }else{
         configuracionPartida.intentosRestante += configuracionPartida.dificultad.suma;
+        document.getElementById("intentosRestantes").innerText = configuracionPartida.intentosRestante;
         cambiarJugada();
     }
 }
