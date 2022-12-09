@@ -531,6 +531,7 @@ function gameOver(){
  * Restaura la configuración de la partida a los parámetros iniciales.
  */
 function restaurarValores(){
+    configuracionPartida.intentosRestante = configuracionPartida.dificultad.intentos;
     configuracionPartida.aciertos = 0;
     configuracionPartida.movimientosRealizados = 0;
     configuracionPartida.movimientosIniciales = 0;
